@@ -210,11 +210,11 @@ auto RK(double r,double v, double a, double T, double r_E, double r_M){
 
 
 double L_2 = d * pow(m_M / (3 * m_E), double(1.0/3.0)); 
-double r = L_2*1.075377 + r_M;  //starting position of the satellite for Taylor
+double r = L_2*1.075377 + r_M;  //starting position of the satellite for Taylor known to result in stable orbit
 double v = 2*pi*r/T;   //starting speed of the satellite found using circular motion
 
-double r_RK = L_2*1.075383 + r_M;    //starting position of the satellite for RK4
-double v_RK = 2*pi*r_RK/T;
+double r_RK = L_2*1.075383 + r_M;    //starting position of the satellite for RK4 known to result in stable orbit
+double v_RK = 2*pi*r_RK/T;     // starting speed of the satellite found using circular motion
 
 int main(){
 
@@ -252,4 +252,5 @@ out.close();
 out1.close();
 out2.close();
 out3.close();
+
 }
